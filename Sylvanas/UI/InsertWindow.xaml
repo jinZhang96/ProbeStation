@@ -1,0 +1,207 @@
+﻿<Window x:Class="DealInsert.InsertWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        Title="InsertWindow" Height="800" Width="1000" Closing="ClosingWindow">
+    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" >
+        <StackPanel>
+            <Label Content="插篮之美" Height="30"></Label>
+        </StackPanel>
+        <GroupBox Header="文件路径设置" Height="100">
+            <Grid HorizontalAlignment="Stretch" Margin="0" Name="grid1" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="当前根目录:" Height="28" HorizontalAlignment="Center" Margin="0" Name="label1" VerticalAlignment="Center" Foreground="Aqua" FontSize="14" />
+                <TextBox Grid.Column="1" Height="45" HorizontalAlignment="Stretch" Margin="2" Name="txtCSTPath" VerticalAlignment="Stretch" Foreground="Blue" FontSize="20" BorderBrush="#CC119EDA" />
+                <Button Content="设置根目录" FontSize="20" Height="30" HorizontalAlignment="Center" IsEnabled="True" Margin="0" Name="btnSet" VerticalAlignment="Center" Width="127" Click="btnSet_Click" Grid.Row="1" Grid.ColumnSpan="2" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="配方寄存器序号配置" Height="100">
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="Label" x:Key="LblStyle">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="FontSize" Value="12"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                    <Style TargetType="TextBox" x:Key="TBStyle">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="FontSize" Value="12"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Width" Value="60"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="BorderBrush" Value="DarkGoldenrod"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Style="{StaticResource LblStyle}" Content="配方名称" Grid.Row="0" Grid.Column="0" ></Label>
+                <Label Style="{StaticResource LblStyle}" Content="配方序号" Grid.Row="0" Grid.Column="1" ></Label>
+                <Label Style="{StaticResource LblStyle}" Content="卡塞行数" Grid.Row="1" Grid.Column="0" ></Label>
+                <TextBox Style="{StaticResource TBStyle}"  Name="NoInsertRow" Grid.Row="1" Grid.Column="1" ></TextBox>
+                <Label Style="{StaticResource LblStyle}" Content="卡塞列数" Grid.Row="2" Grid.Column="0" ></Label>
+                <TextBox Style="{StaticResource TBStyle}"  Name="NoInsertColumn" Grid.Row="2" Grid.Column="1" ></TextBox>
+                <Label Style="{StaticResource LblStyle}" Content="龙骨间距" Grid.Row="1" Grid.Column="2" ></Label>
+                <TextBox  Style="{StaticResource TBStyle}" Name="NoDisKeel" Grid.Row="1" Grid.Column="3" ></TextBox>
+                <Label Style="{StaticResource LblStyle}" Content="第一列龙骨距离" Grid.Row="2" Grid.Column="2" ></Label>
+                <TextBox  Style="{StaticResource TBStyle}" Name="NoDisFirstKeel" Grid.Row="2" Grid.Column="3" ></TextBox>
+                <Label Style="{StaticResource LblStyle}" Content="卡塞理论层高" Grid.Row="1" Grid.Column="4" ></Label>
+                <TextBox  Style="{StaticResource TBStyle}" Name="NoStepZ" Grid.Row="1" Grid.Column="5" ></TextBox>
+                <Label Style="{StaticResource LblStyle}" Content="配方名称" Grid.Row="0" Grid.Column="2"></Label>
+                <Label Style="{StaticResource LblStyle}" Content="配方序号" Grid.Row="0" Grid.Column="3"></Label>
+                <Label Style="{StaticResource LblStyle}" Content="配方名称" Grid.Row="0" Grid.Column="4"></Label>
+                <Label Style="{StaticResource LblStyle}" Content="配方序号" Grid.Row="0" Grid.Column="5"></Label>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="数据寄存器序号配置" Height="450">
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="Label" x:Key="LblStyle">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="FontSize" Value="12"/>
+                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                    </Style>
+                    <Style TargetType="Label" x:Key="LblStyle2">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="FontSize" Value="12"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Background" Value="Wheat"/>
+                    </Style>
+                    <Style TargetType="TextBox" x:Key="TBStyle">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="FontSize" Value="12"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Width" Value="60"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="BorderBrush" Value="AliceBlue"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Label Style="{StaticResource LblStyle2}" Grid.Row="0" Grid.Column="0" Content="寄存器名称"></Label>
+                <Label Style="{StaticResource LblStyle2}" Grid.Row="0" Grid.Column="1" Content="寄存器块"></Label>
+                <Label Style="{StaticResource LblStyle2}" Grid.Row="0" Grid.Column="2" Content="寄存器块序号"></Label>
+                <Label Style="{StaticResource LblStyle2}" Grid.Row="0" Grid.Column="3" Content="寄存器名称"></Label>
+                <Label Style="{StaticResource LblStyle2}" Grid.Row="0" Grid.Column="4" Content="寄存器块"></Label>
+                <Label Style="{StaticResource LblStyle2}" Grid.Row="0" Grid.Column="5" Content="寄存器块序号"></Label>
+                <Label Style="{StaticResource LblStyle2}" Grid.Row="0" Grid.Column="6" Content="寄存器名称"></Label>
+                <Label Style="{StaticResource LblStyle2}" Grid.Row="0" Grid.Column="7" Content="寄存器块"></Label>
+                <Label Style="{StaticResource LblStyle2}" Grid.Row="0" Grid.Column="8" Content="寄存器块序号"></Label>
+                
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve1" Grid.Row="1" Grid.Column="0" Content="插篮X坐标"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve2" Grid.Row="2" Grid.Column="0" Content="当前已经插篮数"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve3" Grid.Row="3" Grid.Column="0" Content="插篮数据确认"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve4" Grid.Row="4" Grid.Column="0" Content="当前卡塞编号"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve5" Grid.Row="5" Grid.Column="0" Content=""></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve6" Grid.Row="6" Grid.Column="0" Content=""></Label>
+                
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve7" Grid.Row="1" Grid.Column="3" Content="卡塞1基准值"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve8" Grid.Row="2" Grid.Column="3" Content="卡塞1高度补偿值"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve9" Grid.Row="3" Grid.Column="3" Content="卡塞1层高绝对值"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve10" Grid.Row="4" Grid.Column="3" Content="卡塞2基准值"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve11" Grid.Row="5" Grid.Column="3" Content="卡塞2高度补偿值"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve12" Grid.Row="6" Grid.Column="3" Content="卡塞2层高绝对值"></Label>
+
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve13" Grid.Row="1" Grid.Column="6" Content="卡塞3基准值"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve14" Grid.Row="2" Grid.Column="6" Content="卡塞3高度补偿值"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve15" Grid.Row="3" Grid.Column="6" Content="卡塞3层高绝对值"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve16" Grid.Row="4" Grid.Column="6" Content="卡塞4基准值"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve17" Grid.Row="5" Grid.Column="6" Content="卡塞4高度补偿值"></Label>
+                <Label Style="{StaticResource LblStyle}" Name="LabelReserve28" Grid.Row="6" Grid.Column="6" Content="卡塞4层高绝对值"></Label>
+
+
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve1" Grid.Row="1" Grid.Column="1"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve2" Grid.Row="2" Grid.Column="1"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve3" Grid.Row="3" Grid.Column="1"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve4" Grid.Row="4" Grid.Column="1"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve5" Grid.Row="5" Grid.Column="1" Visibility="Hidden"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve6" Grid.Row="6" Grid.Column="1" Visibility="Hidden"></TextBox>
+
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve7" Grid.Row="1" Grid.Column="2"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve8" Grid.Row="2" Grid.Column="2"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve9" Grid.Row="3" Grid.Column="2"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve10" Grid.Row="4" Grid.Column="2"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve11" Grid.Row="5" Grid.Column="2" Visibility="Hidden"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve12" Grid.Row="6" Grid.Column="2" Visibility="Hidden"></TextBox>
+
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve13" Grid.Row="1" Grid.Column="4"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve14" Grid.Row="2" Grid.Column="4"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve15" Grid.Row="3" Grid.Column="4"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve16" Grid.Row="4" Grid.Column="4"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve17" Grid.Row="5" Grid.Column="4"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve18" Grid.Row="6" Grid.Column="4"></TextBox>
+
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve19" Grid.Row="1" Grid.Column="5"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve20" Grid.Row="2" Grid.Column="5"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve21" Grid.Row="3" Grid.Column="5"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve22" Grid.Row="4" Grid.Column="5"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve23" Grid.Row="5" Grid.Column="5"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve24" Grid.Row="6" Grid.Column="5"></TextBox>
+
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve25" Grid.Row="1" Grid.Column="7"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve26" Grid.Row="2" Grid.Column="7"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve27" Grid.Row="3" Grid.Column="7"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve28" Grid.Row="4" Grid.Column="7"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve29" Grid.Row="5" Grid.Column="7"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve30" Grid.Row="6" Grid.Column="7"></TextBox>
+
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve31" Grid.Row="1" Grid.Column="8"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve32" Grid.Row="2" Grid.Column="8"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve33" Grid.Row="3" Grid.Column="8"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve34" Grid.Row="4" Grid.Column="8"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve35" Grid.Row="5" Grid.Column="8"></TextBox>
+                <TextBox  Style="{StaticResource TBStyle}" Name="TextBoxReserve36" Grid.Row="6" Grid.Column="8"></TextBox>
+            </Grid>
+        </GroupBox>
+        <StackPanel Orientation="Horizontal" Height="50">
+            
+            <Label Content="卡塞个数" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            <TextBox Name="TextBoxNumCST" Text="1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+            <RadioButton Name="test1" GroupName="group1" Content="基准值在操作面左侧" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,5,5,5"/>
+            <RadioButton Name="test2" GroupName="group1" Content="基准值在操作面右侧" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+            <RadioButton Name="test3" GroupName="group2" Content="插栏臂上下动作插篮" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,5,5,5" BorderBrush="Green"/>
+            <RadioButton Name="test4" GroupName="group2" Content="卡塞上下动作插篮" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" BorderBrush="Green"/>
+        </StackPanel>
+        <StackPanel Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Content="使用常规协议" Background="Beige" Click="RefreshPar_Click" Margin="0" Width="80"  Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+            <Button Content="保存" Background="Beige" Click="SavePar_Click" Width="80"  Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="200,0,0,0"></Button>
+        </StackPanel>
+           
+    </StackPanel>
+</Window>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root Name="设定PLC" IsExpanded="true">
+    <Title Name="PLC基本参数"  Name_EN="BasicPar" IsExpanded="true"/>
+    <Title Name="配置参数寄存器" Name_EN="ConfigReg" IsExpanded="true"/>
+    <Title Name="监控寄存器" Name_EN="MonitorReg" IsExpanded="true"/>
+    <Title Name="相机寄存器" Name_EN="CameraReg" IsExpanded="true"/>
+    <Title Name="数据寄存器1" Name_EN="DataReg1"/>
+    <Title Name="数据寄存器2" Name_EN="DataReg2"/>
+    <Title Name="数据寄存器3" Name_EN="DataReg3"/>
+    <Title Name="数据寄存器4" Name_EN="DataReg4"/>
+    <Title Name="数据寄存器5" Name_EN="DataReg5"/>
+    <Title Name="数据寄存器6" Name_EN="DataReg6"/>
+    <Title Name="循环读取寄存器" Name_EN="CycReg"/>
+
+</Root>

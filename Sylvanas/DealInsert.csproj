@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC1B3997-6AFA-4F3B-9ECA-9027D36E13E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DealInsert</RootNamespace>
+    <AssemblyName>DealInsert</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DLL\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BasicClass">
+      <HintPath>..\Main\bin\机器视觉控制处理软件\BasicClass.dll</HintPath>
+    </Reference>
+    <Reference Include="BasicComprehensive">
+      <HintPath>..\Main\bin\机器视觉控制处理软件\BasicComprehensive.dll</HintPath>
+    </Reference>
+    <Reference Include="Common">
+      <HintPath>..\Main\bin\机器视觉控制处理软件\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlLib">
+      <HintPath>..\DLL\ControlLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DealAlgorithm">
+      <HintPath>..\Main\bin\机器视觉控制处理软件\DealAlgorithm.dll</HintPath>
+    </Reference>
+    <Reference Include="DealCalibrate">
+      <HintPath>..\DLL\DealCalibrate.dll</HintPath>
+    </Reference>
+    <Reference Include="DealComprehensive">
+      <HintPath>..\DLL\DealComprehensive.dll</HintPath>
+    </Reference>
+    <Reference Include="DealConfigFile">
+      <HintPath>..\Main\bin\机器视觉控制处理软件\DealConfigFile.dll</HintPath>
+    </Reference>
+    <Reference Include="DealFile">
+      <HintPath>..\DLL\DealFile.dll</HintPath>
+    </Reference>
+    <Reference Include="DealPLC">
+      <HintPath>..\Main\bin\机器视觉控制处理软件\DealPLC.dll</HintPath>
+    </Reference>
+    <Reference Include="DealResult">
+      <HintPath>..\DLL\DealResult.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LogicInsert\Logic\BaseDealInsert.cs" />
+    <Compile Include="LogicInsert\Logic\ExternalCallling.cs" />
+    <Compile Include="LogicInsert\Par\ParMemory.cs" />
+    <Compile Include="LogicInsert\Par\ParRecipe.cs" />
+    <Compile Include="LogicInsert\Par\ParRegData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\InsertWindow.xaml.cs">
+      <DependentUpon>InsertWindow.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DealCustom\DealCustom.csproj">
+      <Project>{3974E209-0040-4669-BA30-F8E96F0AC1DC}</Project>
+      <Name>DealCustom</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UI\InsertWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
